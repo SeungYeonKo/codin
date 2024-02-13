@@ -14,12 +14,18 @@ public class GenericCollectionExample : MonoBehaviour
         List<string> myList = new List<string>();
         myList.Add("민예진");
         myList.Add("전민성");
+        
 
         // Hashtable -> Dictionary<T1, T2>
         Dictionary<string,int> myTable = new Dictionary<string, int>();     //string:키, int:값
         myTable.Add("민예진", 13);
         myTable.Add("전민성", 23);
         myTable["이성민"] = 22;
+
+        foreach (var key in myTable.Keys)
+        {
+            Debug.Log(myTable[key]);
+        }
 
         // 제네릭 컬렉션의 제한 조건은 박싱/언박싱으로부터 벗어날 수 있게 해준다
         // List<int>는 int 자료형의 데이터만 처리하므로 object 형변환이 안일어난다
