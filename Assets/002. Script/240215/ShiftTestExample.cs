@@ -24,6 +24,7 @@ public class ShiftTestExample : MonoBehaviour
 
     void Update()
     {
-        
+        //깃확인2
+
     }
 }
