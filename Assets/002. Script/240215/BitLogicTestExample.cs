@@ -37,5 +37,5 @@ public class BitLogicTestExample : MonoBehaviour
         Debug.Log(~a);          // -11
     }
 
-    
+    //깃확인
 }
