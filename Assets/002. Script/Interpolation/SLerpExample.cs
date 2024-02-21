@@ -17,6 +17,8 @@ public class SLerpExample : MonoBehaviour
     public Transform Start;
     public Transform End;
 
+    private bool _isRight = false;
+
     // - 진행률 (0~1사이의 값) 
     private float _progress;
 
@@ -24,7 +26,24 @@ public class SLerpExample : MonoBehaviour
 
     void Update()
     {
-        _progress += Time.deltaTime / 3;
+        if (_isRight)
+        {
+            _progress += Time.deltaTime / duration;
+        }
+        else
+        {
+            _progress -= Time.deltaTime / duration;
+        }
+        if (_progress > 1)
+        {
+            _progress = 1;
+            _isRight = false;
+        }
+        if (_progress < 0)
+        {
+            _progress = 0;
+            _isRight = true;
+        }
         // Vector3.Lerp(시작 좌표, 종료 좌표, 진행률)
         transform.position = Vector3.Slerp(Start.position, End.position, _progress);
     }
